@@ -4,6 +4,11 @@ let clickTimeout; // To handle the timeout for single-click
 document.addEventListener(
   "click",
   function (event) {
+    // Check if the click is inside the Google Account Switcher and ignore it
+    if (event.target.closest(".gb_z")) {
+      return; // Ignore clicks inside the Google Account Switcher
+    }
+
     let link = event.target.closest("a, [role='link'], [data-href]");
 
     if (link) {
@@ -53,6 +58,11 @@ document.addEventListener(
 ); // Use the capture phase
 
 document.addEventListener("dblclick", function (event) {
+  // Check if the double-click is inside the Google Account Switcher and ignore it
+  if (event.target.closest(".gb_z")) {
+    return; // Ignore double-clicks inside the Google Account Switcher
+  }
+
   let link = event.target.closest("a, [role='link'], [data-href]");
 
   if (link) {
