@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Double Click to Tab",
+  "version": "1.0",
+  "description": "Opens links in a new tab on double-click",
+  "permissions": ["tabs"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
